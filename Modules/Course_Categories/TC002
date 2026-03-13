@@ -1,0 +1,7 @@
+Feature: Course Categories API Tests
+Scenario Outline: US006_TC02 Dinamik ID ile kategorinin detaylı verilerinin doğrulanması
+
+Given Kullanıcı geçerli bir yetkilendirme şifresine sahip olduğunda,
+When Kullanıcı /api/categories adresine bir GET isteği gönderdiğinde,
+Then Dönen cevap listesi içinde ID'si <istenenId> olan kategori bulunmalıdır,
+And Bulunan bu kategorinin veri yapısı ve çevirileri eksiksiz olmalıdır.

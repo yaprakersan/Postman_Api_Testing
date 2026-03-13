@@ -1,0 +1,10 @@
+(Negative Test)
+Feature: Course Categories API Tests
+Scenario: US006_TC03 Geçersiz token ile kategorilere erişim reddedilmeli (Negative Test)
+
+Given Kullanıcı geçersiz bir yetkilendirme şifresine (invalid token) sahip olduğunda,
+When Kullanıcı /api/categories adresine bir GET isteği gönderdiğinde,
+Then Sistemin güvenliği devreye girmeli ve dönen Status Code 401 olmalıdır,
+And Dönen cevap (response body) içindeki message bilgisi "Unauthenticated." olmalıdır.
+
+//PostMan'de get dosyasını dupublecate edip Headers--> x_key: yanlış veri girildi -->1234567yanlisSifre

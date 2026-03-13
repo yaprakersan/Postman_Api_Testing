@@ -1,0 +1,7 @@
+Feature: Course Categories API Tests
+Scenario: US006_TC01 Başarılı bir şekilde kategorileri listeleme
+
+Given Kullanıcı geçerli bir yetkilendirme şifresine (valid token) sahip olduğunda,
+When Kullanıcı /api/categories adresine bir GET isteği gönderdiğinde,
+Then Dönen Status Code 200 olmalıdır,
+And Dönen cevap (response body) içindeki remark bilgisi "success" olmalıdır.
