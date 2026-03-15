@@ -1,0 +1,8 @@
+Feature: Course Categories API Tests
+
+Scenario: US008_TC03 Geçersiz token ile kategori eklemeye çalışma (Negative Test)
+Given Kullanıcı geçersiz bir yetkilendirme şifresine (invalid token) sahip olduğunda,
+And Kullanıcı eklenecek kategorinin ismini (title) hazırladığında,
+When Kullanıcı /api/addCategory adresine bir POST isteği gönderdiğinde,
+Then Sistemin güvenliği devreye girmeli ve dönen Status Code 401 olmalıdır,
+And Dönen cevap içindeki message bilgisi "Unauthenticated." olmalıdır.

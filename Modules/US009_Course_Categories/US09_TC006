@@ -1,0 +1,7 @@
+Feature: Course Categories API Tests
+
+Scenario: US009_TC07 Güncellenen kategorinin veritabanında doğrulanması (End-to-End)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+When Kullanıcı güncellenen ID ile /api/category/{id} adresine bir GET isteği gönderdiğinde,
+Then Dönen Status Code 200 olmalıdır,
+And Kategorinin yeni adının başarıyla güncellendiği veritabanından doğrulanmalıdır.

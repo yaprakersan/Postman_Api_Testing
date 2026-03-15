@@ -1,0 +1,7 @@
+Feature: Course Categories API Tests
+
+Scenario: US009_TC05 Geçersiz token ile kategori güncellemeye çalışma (Negative Test)
+Given Kullanıcı geçersiz bir yetkilendirme şifresine (invalid token) sahip olduğunda,
+When Kullanıcı geçerli bir ID ve geçerli bir data ile /api/updateCategory/{id} adresine PATCH isteği gönderdiğinde,
+Then Sistemin güvenliği devreye girmeli ve dönen Status Code 401 olmalıdır,
+And Dönen cevap içindeki message bilgisi "Unauthenticated." olmalıdır.

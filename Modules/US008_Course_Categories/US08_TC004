@@ -1,0 +1,8 @@
+Feature: Course Categories API Tests
+
+Scenario: US008_TC04 Eklenen yeni kategorinin API üzerinden doğrulanması (End-to-End)
+Given Kullanıcı geçerli bir yönetici yetkisiyle yeni bir kategori eklediğinde,
+And Sistem yeni kategori için bir "Added Category ID" döndüğünde,
+When Kullanıcı bu yeni ID ile /api/category/{id} adresine bir GET isteği gönderdiğinde,
+Then Dönen Status Code 200 olmalıdır,
+And Eklenen kategorinin veritabanında gerçekten oluştuğu doğrulanmalıdır.

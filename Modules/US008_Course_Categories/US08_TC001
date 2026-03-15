@@ -1,0 +1,14 @@
+Feature: Course Categories API Tests
+
+Scenario: US008_TC01 Başarılı bir şekilde yeni kategori ekleme (Happy Path)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine (admin token) sahip olduğunda,
+And Kullanıcı eklenecek kategorinin ismini (title) hazırladığında,
+                                                                        //body:
+                                                                     {
+                                                                     "title":"Online Education"
+                                                                     }
+
+When Kullanıcı /api/addCategory adresine bir POST isteği gönderdiğinde,
+Then Dönen Status Code 200 olmalıdır,
+And Dönen cevap içindeki remark bilgisi "success" olmalıdır,
+And Dönen cevap içindeki Message bilgisi "Successfully Added." olmalıdır.

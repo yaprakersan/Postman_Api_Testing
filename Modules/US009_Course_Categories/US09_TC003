@@ -1,0 +1,13 @@
+Feature: Course Categories API Tests
+
+Scenario: US009_TC03 Kayıtlı olmayan bir ID ile kategori güncelleme (Negative Test)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+When Kullanıcı sistemde olmayan bir ID ve geçerli bir data ile PATCH isteği gönderdiğinde,
+Then Dönen Status Code 203 olmalıdır,
+And Dönen cevap içindeki remark bilgisi "failed", message bilgisi "There is not category for this id." olmalıdır.
+
+Scenario: US009_TC04 ID parametresi olmadan kategori güncelleme (Negative Test)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+When Kullanıcı ID parametresi olmadan geçerli bir data ile PATCH isteği gönderdiğinde,
+Then Dönen Status Code 203 olmalıdır,
+And Dönen cevap içindeki remark bilgisi "failed", message bilgisi "No id" olmalıdır.

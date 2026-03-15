@@ -1,0 +1,12 @@
+Feature: Course Categories API Tests
+
+Scenario: US009_TC01 Başarılı bir şekilde kategori güncelleme (Happy Path)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+And Kullanıcı güncellenecek kategorinin ID'sini ve yeni ismini (title) hazırladığında,
+{
+"title":"Education and Training"
+}
+When Kullanıcı /api/updateCategory/{id} adresine bir PATCH isteği gönderdiğinde,
+Then Dönen Status Code 200 olmalıdır,
+And Dönen cevap içindeki remark bilgisi "success" olmalıdır,
+And Dönen cevap içindeki Message bilgisi "Successfully Updated." olmalıdır.

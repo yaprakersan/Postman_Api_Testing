@@ -1,0 +1,7 @@
+Feature: Course Categories API Tests
+
+Scenario: US010_TC04 Geçersiz token ile kategori silmeye çalışma (Negative Test)
+Given Kullanıcı geçersiz bir yetkilendirme şifresine (invalid token) sahip olduğunda,
+When Kullanıcı geçerli bir ID ile /api/deleteCategory/{id} adresine DELETE isteği gönderdiğinde,
+Then Sistemin güvenliği devreye girmeli ve dönen Status Code 401 olmalıdır,
+And Dönen cevap içindeki message bilgisi "Unauthenticated." olmalıdır.

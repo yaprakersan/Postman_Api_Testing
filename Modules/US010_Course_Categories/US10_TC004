@@ -1,0 +1,7 @@
+Feature: Course Categories API Tests
+
+Scenario: US010_TC05 Silinen kategori ID'sinin API üzerinden doğrulanması
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine (admin token) sahip olduğunda,
+When Kullanıcı geçerli bir ID ile /api/deleteCategory/{id} adresine bir DELETE isteği gönderdiğinde,
+Then Dönen Status Code 200 olmalıdır,
+And Dönen cevap (response body) içindeki "Deleted Category Id" bilgisinin, URL'de (path parametresi) gönderilen ID ile birebir aynı olduğu doğrulanmalıdır.

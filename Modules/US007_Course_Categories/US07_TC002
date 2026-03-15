@@ -1,0 +1,8 @@
+Feature: Course Categories API Tests
+Scenario: US007 Belirtilen ID ile kategori detaylarına erişim
+
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine (admin token) sahip olduğunda,
+When Kullanıcı geçerli bir ID ile /api/category/{id} adresine bir GET isteği gönderdiğinde, //1180
+Then Dönen Status Code 200 olmalıdır,
+And Dönen cevap (response body) içindeki remark bilgisi "success" olmalıdır,
+And Dönen cevap içindeki kategori detayları (id, slug, parent_id, vb.) ve çeviri detayları (locale, category_id vb.) eksiksiz bulunmalıdır.

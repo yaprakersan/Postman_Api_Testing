@@ -1,0 +1,13 @@
+Feature: Course Categories API Tests
+
+Scenario: US010_TC02 Kayıtlı olmayan bir ID ile kategori silme (Negative Test)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+When Kullanıcı sistemde olmayan bir ID ile DELETE isteği gönderdiğinde,
+Then Dönen Status Code 203 olmalıdır,
+And Dönen cevap içindeki remark bilgisi "failed", message bilgisi "There is not category for this id." olmalıdır.
+
+Scenario: US010_TC03 ID parametresi olmadan kategori silme (Negative Test)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+When Kullanıcı ID parametresi olmadan DELETE isteği gönderdiğinde,
+Then Dönen Status Code 203 olmalıdır,
+And Dönen cevap içindeki remark bilgisi "failed", message bilgisi "No id" olmalıdır.

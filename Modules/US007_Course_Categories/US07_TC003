@@ -1,0 +1,15 @@
+Feature: Course Categories API Tests
+
+Scenario: US007_TC02 Olmayan bir ID ile kategori detaylarına erişim (Negative Test)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine (admin token) sahip olduğunda,
+When Kullanıcı sistemde kayıtlı olmayan bir ID ile /api/category/{id} adresine bir GET isteği gönderdiğinde,
+Then Dönen Status Code 203 olmalıdır,
+And Dönen cevap içindeki remark bilgisi "failed" olmalıdır,
+And Dönen cevap içindeki message bilgisi "There is not category for this id." olmalıdır.
+
+Scenario: US007_TC03 ID parametresi gönderilmeden kategori detaylarına erişim (Negative Test)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine (admin token) sahip olduğunda,
+When Kullanıcı ID parametresi olmadan /api/category adresine bir GET isteği gönderdiğinde,
+Then Dönen Status Code 203 olmalıdır,
+And Dönen cevap içindeki remark bilgisi "failed" olmalıdır,
+And Dönen cevap içindeki message bilgisi "No id" olmalıdır.

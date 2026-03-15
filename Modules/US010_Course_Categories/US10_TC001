@@ -1,0 +1,9 @@
+Feature: Course Categories API Tests
+
+Scenario: US010_TC01 Başarılı bir şekilde kategori silme (Happy Path)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+And Kullanıcı silmek istediği kategorinin geçerli ID'sine sahip olduğunda,
+When Kullanıcı /api/deleteCategory/{id} adresine bir DELETE isteği gönderdiğinde,
+Then Dönen Status Code 200 olmalıdır,
+And Dönen cevap içindeki remark (veya status) bilgisi "success" olmalıdır,
+And Dönen cevap içindeki Message bilgisi "Successfully Deleted." olmalıdır.

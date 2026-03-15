@@ -1,0 +1,8 @@
+Feature: Course Categories API Tests
+
+Scenario: US009_TC02 Veri (data) göndermeden kategori güncellemeye çalışma (Negative Test)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+When Kullanıcı geçerli bir ID ile ancak data içermeyen (boş body) bir PATCH isteğini /api/updateCategory/{id} adresine gönderdiğinde,
+Then Dönen Status Code 203 olmalıdır,
+And Dönen cevap içindeki remark bilgisi "failed" olmalıdır,
+And Dönen cevap içindeki message bilgisi "There is no information to update." olmalıdır.

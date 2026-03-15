@@ -1,0 +1,7 @@
+Feature: Course Categories API Tests
+
+Scenario: US010_TC06 Silinen kategorinin veritabanında kalmadığının doğrulanması (End-to-End)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+When Kullanıcı silinmiş olan bir ID ile /api/category/{id} adresine GET isteği gönderdiğinde,
+Then Dönen Status Code 203 olmalıdır,
+And Sistem "There is not category for this id." mesajı vererek kaydın silindiğini kanıtlamalıdır.

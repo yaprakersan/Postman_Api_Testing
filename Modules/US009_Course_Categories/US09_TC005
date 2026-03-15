@@ -1,0 +1,6 @@
+Feature: Course Categories API Tests
+
+Scenario: US009_TC06 Güncellenen kategori ID'sinin doğrulanması
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine sahip olduğunda,
+When Kullanıcı geçerli bir ID ve data ile /api/updateCategory/{id} adresine PATCH isteği gönderdiğinde,
+Then Dönen cevap içindeki "Updated Category Id" bilgisinin, URL'de gönderilen ID ile birebir aynı olduğu doğrulanmalıdır.

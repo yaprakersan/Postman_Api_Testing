@@ -1,0 +1,7 @@
+Feature: Course Categories API Tests
+
+Scenario: US008_TC02 Veri (data) göndermeden kategori eklemeye çalışma (Negative Test)
+Given Kullanıcı geçerli bir yönetici yetkilendirme şifresine (admin token) sahip olduğunda,
+When Kullanıcı data (title) içermeyen boş bir POST isteğini /api/addCategory adresine gönderdiğinde,
+Then Dönen Status Code 422 olmalıdır,
+And Dönen cevap içindeki message bilgisi "The title field is required." olmalıdır.
